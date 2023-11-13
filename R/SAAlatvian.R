@@ -20,10 +20,12 @@ SAAlatvian <- function(app_name = "SAAlatvian",
   SAA::SAA_standalone(
     app_name = app_name,
     num_items = list(long_tones = 6L, arrhythmic = 0L, rhythmic = 10L),
-    skip_setup = 'except_microphone',
-    default_range = list(bottom_range = 48, top_range = 72),
+    #skip_setup = 'except_microphone',
+    #default_range = list(bottom_range = 48, top_range = 72),
     append_trial_block_before = latvian_folk_songs_block(no_folk_songs, language),
-    languages = "lv"
+    languages = "lv",
+    get_p_id = TRUE,
+    SNR_test = FALSE
   )
 }
 
