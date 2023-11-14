@@ -7,6 +7,7 @@
 #' @param no_folk_songs
 #' @param no_items
 #' @param languages
+#' @param musicassessr_aws
 #'
 #' @return
 #' @export
@@ -15,7 +16,8 @@
 SAAlatvian <- function(app_name = "SAAlatvian",
                        no_folk_songs = 10L,
                        num_items = list(long_tones = 6L, arrhythmic = 0L, rhythmic = 10L),
-                       languages = c("lv", "en")) {
+                       languages = c("lv", "en"),
+                       musicassessr_aws = FALSE) {
 
   language <- match.arg(languages)
 
@@ -29,7 +31,8 @@ SAAlatvian <- function(app_name = "SAAlatvian",
     SNR_test = FALSE,
     final_results = FALSE,
     gold_msi = FALSE,
-    demographics = FALSE
+    demographics = FALSE,
+    musicassessr_aws = musicassessr_aws
   )
 }
 
