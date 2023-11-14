@@ -5,6 +5,7 @@
 #'
 #' @param app_name
 #' @param no_folk_songs
+#' @param no_items
 #' @param languages
 #'
 #' @return
@@ -13,19 +14,22 @@
 #' @examples
 SAAlatvian <- function(app_name = "SAAlatvian",
                        no_folk_songs = 10L,
+                       num_items = list(long_tones = 6L, arrhythmic = 0L, rhythmic = 10L),
                        languages = c("lv", "en")) {
 
   language <- match.arg(languages)
 
   SAA::SAA_standalone(
     app_name = app_name,
-    num_items = list(long_tones = 6L, arrhythmic = 0L, rhythmic = 10L),
-    #skip_setup = 'except_microphone',
-    #default_range = list(bottom_range = 48, top_range = 72),
-    append_trial_block_before = latvian_folk_songs_block(no_folk_songs, language),
+    examples = 2L,
+    num_items = num_items,
+    append_trial_block_after = latvian_folk_songs_block(no_folk_songs, language),
     languages = "lv",
     get_p_id = TRUE,
-    SNR_test = FALSE
+    SNR_test = FALSE,
+    final_results = FALSE,
+    gold_msi = FALSE,
+    demographics = FALSE
   )
 }
 
