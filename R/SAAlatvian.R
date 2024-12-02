@@ -20,7 +20,7 @@ SAAlatvian <- function(app_name = "SAAlatvian",
                          # long_tones = 6L,
                          arrhythmic = 0L,
                          #rhythmic = 1L
-                         rhythmic = 0L # 10L
+                         rhythmic = 10L
                          ),
                        languages = c("lv", "en")) {
 
