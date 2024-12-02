@@ -20,7 +20,7 @@ SAAlatvian <- function(app_name = "SAAlatvian",
                          # long_tones = 6L,
                          arrhythmic = 0L,
                          #rhythmic = 1L
-                         rhythmic = 10L
+                         rhythmic = 0L # 10L
                          ),
                        languages = c("lv", "en")) {
 
@@ -52,12 +52,12 @@ SAAlatvian <- function(app_name = "SAAlatvian",
     skip_setup = 'except_microphone',
     experiment_id = 1L, # dev
     #experiment_id = 4L, # Latvian SAA
-    musicassessr_aws = TRUE,
-    use_musicassessr_db = TRUE,
     asynchronous_api_mode = TRUE,
     user_id = 62L, # SAA latvian experiment user
-    get_answer_melodic = musicassessr::get_answer_add_trial_and_compute_trial_scores_s3
-
+    get_answer_melodic = musicassessr::get_answer_add_trial_and_compute_trial_scores_s3,
+    css = c(system.file("www/css/musicassessr.css", package = "musicassessr"),
+          "https://musicassessr.com/assets/css/style_songbird.css"),
+    enable_admin_panel = FALSE
   )
 }
 
@@ -76,7 +76,5 @@ latvian_folk_songs_block <- function(no_folk_songs, language = "lv") {
     presampled = TRUE,
     page_text = "Spied zemāk, lai dzirdētu melodiju. Dziedi melodiju un ritmu. Spied Stop, kad esi beidzis.",
     page_title = "Dziedi melodiju un ritmus!",
-    instruction_text = "Tagad tu dzirdēsi dažas melodijas ar ritmiem. Lūdzu, mēģini un dziedi melodijas ar konkrēto ritmu.") %>%
-      musicassessr::wrap_musicassessr_timeline(language = "lv") %>%
-      list()
+    instruction_text = "Tagad tu dzirdēsi dažas melodijas ar ritmiem. Lūdzu, mēģini un dziedi melodijas ar konkrēto ritmu.")
 }
