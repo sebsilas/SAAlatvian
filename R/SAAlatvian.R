@@ -38,6 +38,7 @@ SAAlatvian <- function(app_name = "SAAlatvian",
 
   SAA::SAA_standalone(
     app_name = app_name,
+    rhythmic_item_bank = SAAlatvian::latvian_filtered_item_bank,
     examples = 2L,
     num_items = num_items,
     append_trial_block_before = before,
