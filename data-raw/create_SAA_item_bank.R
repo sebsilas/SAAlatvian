@@ -1,7 +1,7 @@
 
 library(tidyverse)
 
-latvian_filtered_item_bank <- SAA::Berkowitz_item_bank_subset %>%
+latvian_filtered_item_bank <- Berkowitz::Berkowitz_item_bank_subset %>%
   as_tibble() %>%
   filter(rhythmic_difficulty_percentile <= 10) %>%
   rowwise() %>%
@@ -15,6 +15,7 @@ latvian_filtered_item_bank <- SAA::Berkowitz_item_bank_subset %>%
          N < 13) %>%
   # Scale melodies with min duration < .40 to be higher
   itembankr::set_item_bank_class()
+
 
 
 use_data(latvian_filtered_item_bank, overwrite = TRUE)

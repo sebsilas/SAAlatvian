@@ -8,11 +8,12 @@ SAAlatvian(
   app_name = "SAAlatvian",
   no_folk_songs = 10L,
   num_items = list(long_tones = 0L, arrhythmic = 0L, rhythmic = 10L),
-  languages = c("lv", "en")
+  languages = c("lv", "en"),
+  experiment_id = 4L
 )
 }
 \arguments{
-\item{musicassessr_aws}{}
+\item{experiment_id}{}
 }
 \description{
 The Latvian SAA

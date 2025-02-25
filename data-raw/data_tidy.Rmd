@@ -1,0 +1,20 @@
+
+
+```{r, warning = FALSE, message = FALSE}
+
+library(tidyverse)
+library(musicassessrdb)
+
+```
+
+
+```{r}
+
+db_con <- musicassessr_con(db_name = "melody_dev")
+
+trials <- compile_item_trials(db_con, 
+                              user_id = 62L)
+
+db_disconnect(db_con)
+
+```

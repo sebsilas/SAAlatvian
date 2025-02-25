@@ -5,9 +5,9 @@
 #'
 #' @param app_name
 #' @param no_folk_songs
-#' @param no_items
+#' @param num_items
 #' @param languages
-#' @param musicassessr_aws
+#' @param experiment_id
 #'
 #' @return
 #' @export
@@ -22,7 +22,9 @@ SAAlatvian <- function(app_name = "SAAlatvian",
                          #rhythmic = 1L
                          rhythmic = 10L
                          ),
-                       languages = c("lv", "en")) {
+                       languages = c("lv", "en"),
+                       experiment_id = 4L # Latvian SAA
+                       ) {
 
   language <- match.arg(languages)
 
@@ -51,8 +53,7 @@ SAAlatvian <- function(app_name = "SAAlatvian",
     demographics = FALSE,
     absolute_url = "https://musicassessr.com/saa-latvian-2024/",
     skip_setup = 'except_microphone',
-    experiment_id = 1L, # dev
-    #experiment_id = 4L, # Latvian SAA
+    experiment_id = experiment_id,
     asynchronous_api_mode = TRUE,
     user_id = 62L, # SAA latvian experiment user
     get_answer_melodic = musicassessr::get_answer_add_trial_and_compute_trial_scores_s3,
