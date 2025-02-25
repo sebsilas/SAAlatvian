@@ -17,9 +17,7 @@ SAAlatvian <- function(app_name = "SAAlatvian",
                        no_folk_songs = 10L,
                        num_items = list(
                          long_tones = 0L,
-                         # long_tones = 6L,
                          arrhythmic = 0L,
-                         #rhythmic = 1L
                          rhythmic = 10L
                          ),
                        languages = c("lv", "en"),
@@ -78,5 +76,7 @@ latvian_folk_songs_block <- function(no_folk_songs, language = "lv") {
     presampled = TRUE,
     page_text = "Spied zemāk, lai dzirdētu melodiju. Dziedi melodiju un ritmu. Spied Stop, kad esi beidzis.",
     page_title = "Dziedi melodiju un ritmus!",
-    instruction_text = "Tagad tu dzirdēsi dažas melodijas ar ritmiem. Lūdzu, mēģini un dziedi melodijas ar konkrēto ritmu.")
+    instruction_text = "Tagad tu dzirdēsi dažas melodijas ar ritmiem. Lūdzu, mēģini un dziedi melodijas ar konkrēto ritmu.",
+    get_answer = musicassessr::get_answer_add_trial_and_compute_trial_scores_s3
+  )
 }
